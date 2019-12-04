@@ -1,0 +1,282 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    background-color: #fff;
+    border-bottom: 1px solid rgb(219, 219, 219);
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+header nav{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav ul li a{
+    text-decoration: none;
+    color: rgb(66, 66, 66);
+    font-family: 'Sulphur Point', sans-serif;
+    font-weight: 700;
+}
+
+.menu-nav{
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    font-family: 'Bowlby One SC', cursive;
+    font-size: 2rem;
+}
+
+.menu-nav ul li{
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.sign-nav{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.sign-nav ul li{
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.content-container{
+    position: relative;
+    top: 100px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intro-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.intro-content{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+
+.intro-content .greeting .headline{
+    align-self: center;
+    font-family: 'Sulphur Point', sans-serif;
+    font-size: 2.7rem;
+    font-weight: bold;
+    color: #192942;
+}
+
+.intro-content .greeting .intro-description{
+    font-size: 1rem;
+    font-family: 'Sulphur Point', sans-serif;
+    text-align: justify;
+}
+
+.categori-container{
+    display: flex;
+    margin: 100px auto;
+}
+
+.cat-area{
+    height: 300px;
+    padding: 0 10px;
+    border: 1px solid rgb(236, 236, 236);
+    font-family: 'Sulphur Point', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0 10px;
+}
+
+.cat-area img:hover{
+    transform: scale(1.1);
+    transition: all 500ms ease-in;
+}
+
+.cat-area p{
+    color: rgb(66, 66, 66);
+    margin: 80px 0 0 0;
+}
+
+.get-started-container{
+    margin-bottom: 100px;
+    font-family: 'Sulphur Point', sans-serif;
+    color: #192942;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.get-started-container section{
+    margin: 20px auto;
+}
+
+.get-started-container .plan-ilustration-area img{
+    margin: 0 50px;
+}
+
+.mirror-img{
+    transform: scaleX(-1);
+}
+
+.get-started-direction{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.get-started-direction a button{
+    background-color: #942222;
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-family: 'Sulphur Point', sans-serif;
+    margin-top: 10px;
+}
+
+.get-started-direction a button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all 200ms ease-in;
+}
+
+footer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(223, 223, 223);
+    font-family: 'Sulphur Point', sans-serif;
+    padding: 30px 90px;
+    position: relative;
+    bottom: 0;
+}
+
+.legal-area ul li{
+    display: inline-block;
+    margin: 5px;
+}
+
+.legal-area ul li a{
+    text-decoration: none;
+    color: rgb(85, 85, 85);
+}
+
+.legal-area ul li a:hover{
+    text-decoration: none;
+    color: rgb(85, 85, 85);
+    text-decoration: underline;
+}
+
+.footer-logo{
+    margin-right: 20px;
+}
+
+.socmed-area ul li{
+    display: inline-block;
+    color: rgb(85, 85, 85);
+    margin: auto 5px;
+}
+
+.socmed-area ul li a{
+    color: rgb(85, 85, 85);
+    font-size: 1.1rem;
+}
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+    
+}
+
+/* 
+##Device = Laptops, Desktops
+##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+}
+
+/* 
+##Device = Tablets, Ipads (portrait)
+##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .menu-nav{
+        width: 57%;
+    }
+
+    .ilustration img{
+        width: 600px;
+    }
+
+    .intro-content .greeting .headline{
+        font-size: 2rem;
+    }
+
+    .cat-area img{
+        width: 150px;
+    }
+
+    .get-started-container img{
+        width: 250px;
+    }
+}
+
+/* 
+##Device = Tablets, Ipads (landscape)
+##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+}
+
+/* 
+##Device = Low Resolution Tablets, Mobiles (Landscape)
+##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+}
+
+/* 
+##Device = Most of the Smartphones Mobiles (Portrait)
+##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+    
+}

@@ -1,0 +1,17 @@
+ALGORITMA
+
+1. simpan 'jumlahPakaian' dengan nilai 0
+2. Lakukan langkah 2.a selama 'jumlahPakaian' masih dibawah 20. jika 'jumlahPakaian' sudah 20, lanjut ke langkah 3
+    2.a. tambah 'jumlahPakaian' dengan 1, agar mendekati batas perulangan. kembali ke langkah 2
+3. tamplkan "Tombol power menyala"
+
+
+PSEUDOCODE
+
+STORE 'jumlahPakaian' with 0
+
+WHILE 'jumlahPakaian' < 20
+    ADD 'jumlahPakaian' by 1
+    SET 'jumlahPakaian' with 'jumlahPakaian' + 1
+END WHILE
+DISPLAY "Tombol power menyala"

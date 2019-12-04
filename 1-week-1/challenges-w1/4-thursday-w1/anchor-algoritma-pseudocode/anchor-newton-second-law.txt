@@ -1,0 +1,17 @@
+ALGORITMA
+
+1. Simpan 'm' dengan nilai angka 600
+2. Simpan 'a' dengan nilai angka 2
+3. Simpan 'F' tanpa nilai. nilai akan diisi dari hasil perhitungan berikutnya.
+4. Hitung hasil perkalian dari 'm' dan 'a'
+5. Simpan ke dalam 'F' hasil perhitungan langkah 4
+
+
+PSEUDOCODE
+
+STORE 'm' with 600
+STORE 'a' with 2
+STORE 'F' without any value
+
+CALCULATE 'm' times 'a'
+SET 'F' value with calculation result

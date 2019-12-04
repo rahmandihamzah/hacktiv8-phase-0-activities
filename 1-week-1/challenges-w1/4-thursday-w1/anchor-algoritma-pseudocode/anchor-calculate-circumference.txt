@@ -1,0 +1,19 @@
+ALGORITMA
+
+1. Simpan 'pi' dengan nilai angka 3.14
+2. Simpan 'r' dengan nilai angka berapapun
+3. Simpan 'kelilingLingkaran' tanpa nilai. nilai akan diisi dari hasil perhitungan berikutnya.
+4. Hitung hasil perkalian dari 2, 'pi' dan 'r'
+5. Simpan ke dalam 'kelilingLingkaran' hasil perhitungan langkah 4
+6. Tampilkan nilai dari 'kelilingLingkaran'
+
+PSEUDOCODE
+
+STORE 'pi' with 3.14
+STORE 'r' with any number
+STORE 'kelilingLingkaran' without any value
+
+CALCULATE 2 times 'm' times 'a'
+SET 'kelilingLingkaran' value with calculation result
+
+DISPLAY 'kelilingLingkaran'

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+    <title>Form Page</title>
+</head>
+<body>
+    <h1>Buat Account Baru!</h1>
+
+    <h3>Sign Up Form</h3>
+    <form action="./welcome.html">
+        <section>
+            <label for="firstName">First Name: </label><br>
+            <input type="text" id="firstName">
+        </section><br>
+
+        <section>
+            <label for="lastName">Last Name: </label><br>
+            <input type="text" id="lastName">
+        </section><br>
+
+        <section>
+            <label>Gender: </label><br>
+            <input type="radio" name="gender" id="male" value="male">
+            <label for="male">Male</label><br>
+
+            <input type="radio" name="gender" id="female" value="female">
+            <label for="female">Female</label><br>
+
+            <input type="radio" name="gender" id="other" value="other">
+            <label for="other">Other</label>
+        </section><br>
+
+        <section>
+            <label for="nationality">Nationality: </label><br>
+            <select name="nationality" id="nationality">
+                <option value="indonesian">Indonesian</option>
+                <option value="singaporean">Singaporean</option>
+                <option value="malaysian">Malaysian</option>
+                <option value="Australian">Australian</option>
+            </select>
+        </section><br>
+
+        <section>
+            <label>Language Spoken: </label><br>
+            <input type="checkbox" name="language" id="bahasaIndonesia" value="bahasaIndonesia">
+            <label for="bahasaIndonesia">Bahasa Indonesia</label><br>
+
+            <input type="checkbox" name="language" id="english" value="english">
+            <label for="english">English</label><br>
+
+            <input type="checkbox" name="language" id="otherLang" value="other">
+            <label for="otherLang">other</label><br>
+        </section><br>
+
+        <section>
+            <label for="bio">Bio: </label><br>
+            <textarea name="bio" id="bio" cols="30" rows="10"></textarea>
+        </section><br>
+
+        <section>
+            <input type="submit" name="submit" id="submit">
+        </section>
+    </form>
+</body>
+</html>
