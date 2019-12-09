@@ -1,33 +1,44 @@
 function sortAllClean(array) {
-    let newArray = [];
+    let newArray = [[],[],[]];
     let temp;
+    
+    // for (let i = 0; i < array.length; i++) {
+    //     console.log(typeof array[i]);
 
-    let isLast = false;
-    let j = 0;
-    while (isLast === false) { 
-        for (let i = 0; i < newArray.length; i++) {
-            if (array[j] !== null || array[j] !== [] || array[j] !== undefined || array[j] !== NaN) {
-            } else if (typeof array[j] === typeof newArray[i][0]) {
-                    newArray[i].push(array[j]);
-                    j++
+    //     if (typeof array[i] === 'number') {
+    //         if (!isNaN === false) {
+    //             newArray[0].push(array[i]);
+    //         }
+    //     } else if (typeof array[i] === 'string') {
+    //         newArray[1].push(array[i]);
+    //     } else if (typeof array[i] === 'boolean') {
+    //         newArray[2].push(array[i]);
+    //     }
+    // }
+
+
+    let newArray1 = [];
+
+    for (let i = 0; i < array.length; i++) {
+        // if (newArray1 === []) {
+        //     newArray1.push([array[i]]);
+        //     i++
+        // }
+
+        if (array[i] !== NaN || array[i] !== undefined || array[i] !== [] || array[i] !== null) {
+            for (let j = 0; j < newArray1.length; j++) {
+                if (typeof array[i] === typeof newArray1[j][0]) {
+                    newArray1[j].push(array[i]);
+                    i++;
                 }
+            }
+    
+            newArray1.push([array[i]]);
         }
 
-        for (let i = 0; i < newArray.length; i++) {
-            if (typeof array[j] === typeof newArray[i][0]) {
-                newArray[i].push(array[j]);
-            } 
-        }
-
-        if (j === array.length - 1) {
-            isLast = true;
-        } else {
-            newArray.push([array[j]]);
-            j++;
-        }
     }
 
-    return newArray;
+    return newArray1;
 }
   
 console.log(sortAllClean([ undefined, null, 456, 'def', NaN, [], true, 123, 'bcd', false ]));
