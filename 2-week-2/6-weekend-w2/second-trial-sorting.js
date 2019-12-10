@@ -50,21 +50,34 @@ function sortAllClean(array) {
 
 
 
+    // let newArray2 = [];
+    // for (let i = 0; i < array.length; i++) {
+    //     if (array[i] !== undefined && array[i] !== null && isNaN(array[i]) === false) {
+    //         console.log(array[i]);
+    //         if (newArray2.length === 0) {
+    //             newArray2.push([array[i]]);
+    //         } else {
+    //             for (let j = 0; j < newArray2.length; j++) {
+    //                 // console.log(newArray2[j]);
+    //                 // console.log(j);
+    //                 if (typeof array[i] === typeof newArray2[j][0]) {
+    //                     newArray2[j].push(array[i]);
+    //                 } else if (j === newArray2.length - 1) {
+    //                     newArray2.push([array[i]]);
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+
+
     let newArray2 = [];
+
     for (let i = 0; i < array.length; i++) {
-        if (newArray2.length === 0) {
-            newArray2.push([array[i]]);
-        } else {
-            for (let j = 0; j < newArray2.length; j++) {
-                if (array[i] === newArray2[j][0]) {
-                    newArray2[j].push(array[i]);
-                } else if (i === newArray2.length - 1) {
-                    newArray2.push([array[i]]);
-                }
-                console.log(newArray2);
-            }
+        for (let j = 0; j < newArray2.length; j++) {
         }
     }
+
 
     return newArray2;
 }

@@ -22,6 +22,7 @@ function splitting(str) {
 }
 
 
+
 function meleeRangedGrouping (str) {
     let splitResult = splitting(str);
     let groupResult = [];
