@@ -17,7 +17,7 @@ console.log(`Kalimat : ${kalimat}`);
 let jumlahKata = 0;
 
 for (let i = 0; i < kalimat.length; i++) {
-    if (kalimat[i] === ' ' || i === kalimat.length - 1) {
+    if (kalimat[i] === ' ' &&  kalimat[i - 1] !== ' ' || i === kalimat.length - 1) {
         jumlahKata++;
     }
 }

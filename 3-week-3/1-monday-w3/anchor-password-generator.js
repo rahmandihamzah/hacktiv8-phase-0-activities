@@ -32,21 +32,25 @@ function changeVocals (str) {
 }
 
 function reverseWord (str) {
+    let result = changeVocals(str);
+
     let newStr = '';
-    for (let i = str.length - 1; i >= 0; i--) {
-        newStr += str[i];
+    for (let i = result.length - 1; i >= 0; i--) {
+        newStr += result[i];
     }
 
     return newStr;
 }
 
 function setLowerUpperCase (str) {
+    let result = reverseWord(str);
+
     let newStr = '';
-    for (let i = 0; i < str.length; i++) {
-        if (str[i] === str[i].toUpperCase()) {
-            newStr += str[i].toLowerCase()
-        } else if (str[i] === str[i].toLowerCase()) {
-            newStr += str[i].toUpperCase()
+    for (let i = 0; i < result.length; i++) {
+        if (result[i] === result[i].toUpperCase()) {
+            newStr += result[i].toLowerCase()
+        } else if (result[i] === result[i].toLowerCase()) {
+            newStr += result[i].toUpperCase()
         }
     }
 
@@ -54,12 +58,14 @@ function setLowerUpperCase (str) {
 }
 
 function removeSpaces (str) {
+    let result = setLowerUpperCase(str);
+
     let newStr = '';
-    for (let i = 0; i < str.length; i++) {
-        if (str[i] === ' ') {
+    for (let i = 0; i < result.length; i++) {
+        if (result[i] === ' ') {
             i++
         } else {
-            newStr += str[i];
+            newStr += result[i];
         }
     }
     return newStr;
@@ -69,14 +75,9 @@ function passwordGenerator (name) {
     if (name.length < 5) {
         return 'Minimal karakter yang diinputkan adalah 5 karakter'
     } else {
-        let result;
-        result = changeVocals(name);
-        result = reverseWord(name);
-        result = setLowerUpperCase(name);
-        result = removeSpaces(name);
+        let result = removeSpaces(name);
 
         return result;
-        // return removeSpaces(setLowerUpperCase(reverseWord(changeVocals(name))));
     }
 }
 

@@ -17,28 +17,56 @@ function sortAllClean(array) {
     // }
 
 
-    let newArray1 = [];
 
+    // for (let i = 0; i < array.length; i++) {
+    //     if (array[i] !== NaN || array[i] !== undefined || array[i] !== [] || array[i] !== null) {
+    //         for (let j = 0; j < newArray1.length; j++) {
+    //             if (typeof array[i] === typeof newArray1[j][0]) {
+    //                 newArray1[j].push(array[i]);
+    //                 i++;
+    //             }
+    //         }
+    //         newArray1.push([array[i]]);
+    //     }
+
+    // }
+
+
+
+    // let newArray1 = [];
+
+    // for (let i = 0; i < array.length; i++) {
+    //     for (let j = 0; j < newArray1.length; j++) {
+    //         if (array[i] !== NaN || array[i] !== undefined || array[i] !== [] || array[i] !== null) {
+    //             if (typeof array[i] === typeof newArray1[j][0]) {
+    //                 newArray1[j].push(array[i]);
+    //                 // i++;
+    //             } else {
+    //                 newArray1.push([array[i]]);
+    //             }
+    //         }
+    //     }
+    // }
+
+
+
+    let newArray2 = [];
     for (let i = 0; i < array.length; i++) {
-        // if (newArray1 === []) {
-        //     newArray1.push([array[i]]);
-        //     i++
-        // }
-
-        if (array[i] !== NaN || array[i] !== undefined || array[i] !== [] || array[i] !== null) {
-            for (let j = 0; j < newArray1.length; j++) {
-                if (typeof array[i] === typeof newArray1[j][0]) {
-                    newArray1[j].push(array[i]);
-                    i++;
+        if (newArray2.length === 0) {
+            newArray2.push([array[i]]);
+        } else {
+            for (let j = 0; j < newArray2.length; j++) {
+                if (array[i] === newArray2[j][0]) {
+                    newArray2[j].push(array[i]);
+                } else if (i === newArray2.length - 1) {
+                    newArray2.push([array[i]]);
                 }
+                console.log(newArray2);
             }
-    
-            newArray1.push([array[i]]);
         }
-
     }
 
-    return newArray1;
+    return newArray2;
 }
   
 console.log(sortAllClean([ undefined, null, 456, 'def', NaN, [], true, 123, 'bcd', false ]));
