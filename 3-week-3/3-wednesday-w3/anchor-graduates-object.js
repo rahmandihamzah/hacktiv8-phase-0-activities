@@ -5,18 +5,22 @@ function graduates (students) {
         resultObj = {}
     } else {
         for (let i = 0; i < students.length; i++) {
-            // if (resultObj === undefined) {
-            //     if (students[i].score >= 75) {
-            //         resultObj = {};
-            //         resultObj[students[i].class] = [];
-            //         resultObj[students[i].class].push({});
-            //         resultObj[students[i].class][0].name = students[i].name;
-            //         resultObj[students[i].class][0].score = students[i].score;
-            //     }
-            // }
             if (students[i].score >= 75) {
-                if (resultObj[students[i].class] === undefined) {
-                    
+                if (resultObj === undefined) {
+                    resultObj = {};
+                    resultObj[students[i].class] = [];
+                    resultObj[students[i].class].push({});
+                    resultObj[students[i].class][resultObj[students[i].class].length - 1].name = students[i].name;
+                    resultObj[students[i].class][resultObj[students[i].class].length - 1].score = students[i].score;
+                } else if (resultObj.hasOwnProperty(students[i].class)) {
+                    resultObj[students[i].class].push({});
+                    resultObj[students[i].class][resultObj[students[i].class].length - 1].name = students[i].name;
+                    resultObj[students[i].class][resultObj[students[i].class].length - 1].score = students[i].score;
+                } else {
+                    resultObj[students[i].class] = [];
+                    resultObj[students[i].class].push({});
+                    resultObj[students[i].class][resultObj[students[i].class].length - 1].name = students[i].name;
+                    resultObj[students[i].class][resultObj[students[i].class].length - 1].score = students[i].score;
                 }
             }
         }
