@@ -13,35 +13,61 @@
  *    ATAU input bukan number
  */
 function baris(str, num){
-    let temp = ''
-    let a = 0;
+    // let temp = ''
+    // let a = 0;
 
-    if (num <= 0) {
-        temp = false;
-    } else {
-        for (i = a; i < str.length; i++) {
-            for (let j = 0; j < num; j++) {
-                if (i < str.length) {
-                    if (str[i] === ' ') {
-                        i++;
-                        j--;
-                    } else if (j === num - 1) {
-                        temp += str[i];
-                    } else {
-                        temp += str[i];
-                        i++;
-                    }
-                }
-            }
-            temp += '\n'
-        }
-        // console.log(temp);
-    }
+    // if (num <= 0) {
+    //     temp = false;
+    // } else {
+    //     for (i = a; i < str.length; i++) {
+    //         for (let j = 0; j < num; j++) {
+    //             if (i < str.length) {
+    //                 if (str[i] === ' ') {
+    //                     i++;
+    //                     j--;
+    //                 } else if (j === num - 1) {
+    //                     temp += str[i];
+    //                 } else {
+    //                     temp += str[i];
+    //                     i++;
+    //                 }
+    //             }
+    //         }
+    //         temp += '\n'
+    //     }
+    //     // console.log(temp);
+    // }
     
-    return temp;
+    // return temp;
+
+    if(num <= 0 || num === undefined || str === "" || str === undefined){
+        return false;
+    }
+    else{
+        var text = "";
+        var baris = 0;
+        for(var i = 0; i < str.length; i++){
+            if(str[i] !== " "){
+                if(baris === num){
+                    text += "\n";
+                    baris = 0;                    
+                }
+                text += str[i];
+                baris++;
+            }
+        }
+    }
+    return text;
 }
 
-console.log(baris("HALO HALO BANDUNG LAUTAN API", 3));
+/**
+ * i = 4
+ * j = 0
+ * 
+ * temp = hal \n
+ */
+
+console.log(baris("  HALO HALO BANDUNG LAUTAN API", 3));
 /*
 HAL
 OHA
