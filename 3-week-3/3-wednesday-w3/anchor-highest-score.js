@@ -1,26 +1,44 @@
 function highestScore (students) {
-    let resultObject;
+    
+// code sebelum review
+    // let resultObject;
 
-    if (students.length === 0) {
-        resultObject = {};
-    } else {
-            for (let i = 0; i < students.length; i++) {
-                if (resultObject === undefined) {
-                    resultObject = {};
-                    resultObject[students[i].class] = {};
-                    resultObject[students[i].class].name = students[i].name;
-                    resultObject[students[i].class].score = students[i].score;
-                } else if (resultObject.hasOwnProperty(students[i].class)) {
-                    if (students[i].score > resultObject[students[i].score]) {
-                        resultObject[students[i].class].name = students[i].name;
-                        resultObject[students[i].class].score = students[i].score;
-                    }
-                } else {
-                    resultObject[students[i].class] = {};
-                    resultObject[students[i].class].name = students[i].name;
-                    resultObject[students[i].class].score = students[i].score;
-                }
+    // if (students.length === 0) {
+    //     resultObject = {};
+    // } else {
+    //         for (let i = 0; i < students.length; i++) {
+    //             if (resultObject === undefined) {
+    //                 resultObject = {};
+    //                 resultObject[students[i].class] = {};
+    //                 resultObject[students[i].class].name = students[i].name;
+    //                 resultObject[students[i].class].score = students[i].score;
+    //             } else if (resultObject.hasOwnProperty(students[i].class)) {
+    //                 if (students[i].score > resultObject[students[i].score]) {
+    //                     resultObject[students[i].class].name = students[i].name;
+    //                     resultObject[students[i].class].score = students[i].score;
+    //                 }
+    //             } else {
+    //                 resultObject[students[i].class] = {};
+    //                 resultObject[students[i].class].name = students[i].name;
+    //                 resultObject[students[i].class].score = students[i].score;
+    //             }
+    //         }
+    // }
+
+// code setelah review
+    let resultObject = {};
+
+    for (let i = 0; i < students.length; i++) {
+        if (resultObject[students[i].class] === undefined) {
+            resultObject[students[i].class] = {};
+            resultObject[students[i].class].name = students[i].name;
+            resultObject[students[i].class].score = students[i].score;
+        } else {
+            if (students[i].score > resultObject[students[i].class].score) {
+                resultObject[students[i].class].name = students[i].name;
+                resultObject[students[i].class].score = students[i].score;
             }
+        }
     }
 
     return resultObject;    

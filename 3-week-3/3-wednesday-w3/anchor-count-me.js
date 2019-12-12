@@ -1,14 +1,26 @@
 function countMe(arr) {
-    let resultObject;
+// code sebelum review    
+    // let resultObject;
+
+    // for (let i = 0; i < arr.length; i++) {
+    //     if (resultObject === undefined) {
+    //         resultObject = {};
+    //         resultObject[arr[i]] = 1;
+    //     } else if (resultObject.hasOwnProperty(arr[i])) {
+    //         resultObject[arr[i]] ++;
+    //     } else {
+    //         resultObject[arr[i]] = 1;
+    //     }
+    // }
+
+// code setelah review
+    let resultObject = {};
 
     for (let i = 0; i < arr.length; i++) {
-        if (resultObject === undefined) {
-            resultObject = {};
+        if (resultObject[arr[i]] === undefined) {
             resultObject[arr[i]] = 1;
-        } else if (resultObject.hasOwnProperty(arr[i])) {
-            resultObject[arr[i]] ++;
         } else {
-            resultObject[arr[i]] = 1;
+            resultObject[arr[i]]++;
         }
     }
 
