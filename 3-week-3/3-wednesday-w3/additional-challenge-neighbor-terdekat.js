@@ -8,26 +8,47 @@
 */
 
 function findNeighbor(arr){
-    let ref = {};
+    let ref = [];
+    let resultNeighbor = {};
+
     for (let i = 0; i < arr.length; i++) {
         for (let j = 0; j < arr[i].length; j++) {
             if (typeof arr[i][j] === "string"){
-                ref[arr[i][j]] = [];
-                ref[arr[i][j]].push(j);
-                ref[arr[i][j]].push(i);
+                ref.push([]);
+                ref[ref.length - 1].push(arr[i][j]);
+                ref[ref.length - 1].push(i);
+                ref[ref.length - 1].push(j);
             }
         }
     }
 
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = 0; j < arr[i].length; j++) {
-            if (i === ref) {
-                
+    // console.log(ref);
+    
+    for (let i = 0; i < ref.length; i++) {
+        resultNeighbor[ref[i][0]] = [];
+        for (let j = ref[i][1] - 1; j <= ref[i][1] + 1; j++) {
+            // console.log('ini J ' + j + ' =====================');
+            for (let k = ref[i][2] - 1; k <= ref[i][2] + 1; k++) {
+                if (j >= 0 && j < arr.length && k >= 0 && k < arr[j].length && typeof arr[j][k] !== "string") {
+                    // console.log('ini K ' + k);
+                    resultNeighbor[ref[i][0]].push(arr[j][k]);     
+                }
             }
         }
     }
 
-    return ref;
+    // let row;
+    // let col;
+    // for (let i = 0; i < arr.length; i++) {
+    //     for (let j = 0; j < arr[i].length; j++) {
+    //         if (typeof arr[i][j] === "string") {
+    //             row = i;
+    //             col = j;
+    //         }
+    //     }
+    // }
+    
+    return resultNeighbor;
 
 }
 
