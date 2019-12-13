@@ -1,5 +1,5 @@
 function sortAllClean(array) {
-    let newArray = [[],[],[]];
+    let newArray = [];
     let temp;
     
     // for (let i = 0; i < array.length; i++) {
@@ -74,7 +74,17 @@ function sortAllClean(array) {
     let newArray2 = [];
 
     for (let i = 0; i < array.length; i++) {
-        for (let j = 0; j < newArray2.length; j++) {
+        if (typeof array[i] === "string" || typeof array[i] === "number" || typeof array[i] === "boolean") {
+            console.log(array[i] + typeof array[i]);
+            for (let j = 0; j <= newArray2.length; j++) {
+                if (j === newArray2.length) {
+                    newArray2.push([array[i]]);
+                } else if (typeof array[i] === typeof newArray2[j]) {
+                    newArray2[j].push(array[i]);
+                }
+            }
+        } else {
+            console.log('tidak');
         }
     }
 
