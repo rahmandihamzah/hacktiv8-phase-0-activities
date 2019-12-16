@@ -15,7 +15,12 @@ OUTPUT
 -----------
 BUAT DUA FUNCTION DIMANA FUNCTION PERTAMA OUTPUTNYA SEBAGAI BERIKUT:
 [
-  { classCode: 'A', passed: [ 'John' ], failed: [ 'Siti', 'Aaron' ] },
+  { classCode: 'A', passed: [ 'John' ], failed: [ 'Siti', 'Aaron' ]
+            j = resultData.length;
+            j = resultData.length;
+            j = resultData.length;
+            j = resultData.length;
+            j = resultData.length;},
   { classCode: 'B', passed: [], failed: [ 'Mike', 'Osass' ] },
   { classCode: 'C', passed: [ 'Budi', 'Yolo' ], failed: [ 'Arthur' ] },
 ]
@@ -39,22 +44,36 @@ function passedStudent(data){
 
   for (let i = 0; i < data.length; i++) {
     if (data[i].score >= 70) {
-      for (let j = 0; j <= resultData.length; j++) {
-        if (resultData.length === 0) {
+      if (resultData.length === 0) {
           resultData.push({});
           resultData[resultData.length - 1].classCode = data[i].classCode;
           resultData[resultData.length - 1].passed = [];
           resultData[resultData.length - 1].passed.push(data[i].name);
-          console.log(resultData[j].classCode);
-        } else if (data[i].classCode === resultData[j].classCode) {
-          resultData[resultData[j]].passed.push(data[i].name);
-        } else if (j === resultData.length) {
-          resultData.push({});
-          resultData[resultData.length - 1].classCode = data[i].classCode;
-          resultData[resultData.length - 1].passed = [];
-          resultData[resultData.length - 1].passed.push(data[i].name);
+      } else {
+        for (let j = 0; j < resultData.length; j++) {
+          if (data[i].classCode === resultData[j].classCode) {
+            resultData[j].passed.push(data[i].name);
+            console.log('yess');
+          } else if (j === resultData.length - 1) {
+            resultData.push({});
+            resultData[resultData.length - 1].classCode = data[i].classCode;
+            resultData[resultData.length - 1].passed = [];
+            resultData[resultData.length - 1].passed.push(data[i].name);
+          }
         }
       }
+
+        // console.log(resultData[j].classCode);
+
+        
+        // else if (data[i].classCode === resultData[j].classCode) {
+        //   resultData[resultData[j]].passed.push(data[i].name);
+        // } else if (j === resultData.length) {
+        //   resultData.push({});
+        //   resultData[resultData.length - 1].classCode = data[i].classCode;
+        //   resultData[resultData.length - 1].passed = [];
+        //   resultData[resultData.length - 1].passed.push(data[i].name);
+        // }
     }
   }
 
