@@ -1,6 +1,21 @@
 function cariMedian(arr) {
     let median;
 
+    let status = true;
+    while (status) {
+        status = false;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > arr[i + 1]) {
+                let temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+                status = false;
+            }
+        }
+    }
+
+    console.log(arr);
+
     if (arr.length % 2 === 0) {
         median = (arr[(arr.length / 2) - 1] + arr[arr.length / 2]) / 2;
     } else {
