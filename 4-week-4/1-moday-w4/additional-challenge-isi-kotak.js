@@ -20,36 +20,51 @@
 
 function isiKotak(num) {
     let resultArray = [];
-    let temp = 0;
+    let temp = 1;
 
     if (typeof num !== 'number') {
         resultArray = 'Invalid';
     } else {
         console.log('=========');
+        // for (let i = 0; i < num; i++) {
+
+        //     resultArray.push([]);
+
+        //     for (let l = 0; l < num; l++) {
+        //         for (let j = temp + 1; j <= num; j++) {
+        //             if (resultArray[resultArray.length -  1].length === num) {
+        //                 break;
+        //             }
+
+        //             resultArray[resultArray.length - 1].push(j);
+                    
+        //             temp = j;
+        //         }
+
+        //         for (let k = temp - 1; k > 0; k--) {
+        //             if (resultArray[resultArray.length -  1].length === num) {
+        //                 break;
+        //             }
+                    
+        //             resultArray[resultArray.length - 1].push(k);
+                    
+        //             temp = k;
+        //         }
+        //     }
+        // }
+
+
         for (let i = 0; i < num; i++) {
-
-            resultArray.push([]);
-
-            for (let l = 0; l < num; l++) {
-                for (let j = temp + 1; j <= num; j++) {
-                    if (resultArray[resultArray.length -  1].length === num) {
-                        break;
-                    }
-
-                    resultArray[resultArray.length - 1].push(j);
-                    
-                    temp = j;
+            resultArray.push([])
+            for (let j = 0; j < num; j++) {
+                if (temp === 1) {
+                    resultArray[resultArray.length - 1].push(temp);
+                    temp++;
+                } else if (temp === num) {
+                    resultArray[resultArray.length - 1].push(temp);
+                    temp--;
                 }
 
-                for (let k = temp - 1; k > 0; k--) {
-                    if (resultArray[resultArray.length -  1].length === num) {
-                        break;
-                    }
-                    
-                    resultArray[resultArray.length - 1].push(k);
-                    
-                    temp = k;
-                }
             }
         }
     }
@@ -120,7 +135,3 @@ console.log(isiKotak(15))
 //   [ 3, 4, 5, 4, 3, 2, 1, 0, 9, 8, 7, 6, 5, 4, 3 ],
 //   [ 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4 ],
 //   [ 5, 4, 3, 2, 1, 0, 9, 8, 7, 6, 5, 4, 3, 2, 1 ] ]
-
-
-    
-    
