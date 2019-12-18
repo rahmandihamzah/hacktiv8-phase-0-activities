@@ -46,9 +46,11 @@ function tinder(people) {
     
     for (let j = 0; j < people.length; j++) {
       if (i !== j) {
-        for (let k = 0; k < people[j].traits.length; k++) {
-          if (people[i].expectation === people[j].traits[k]) {
-            resultStatus[people[i].name].match.push(people[j].name);
+        if (people[i].gender !== people[j].gender) {
+          for (let k = 0; k < people[j].traits.length; k++) {
+            if (people[i].expectation === people[j].traits[k]) {
+              resultStatus[people[i].name].match.push(people[j].name);
+            }
           }
         }
       }
@@ -74,7 +76,7 @@ var people1 = [
   {
     name: 'Dimas',
     gender: 'Male',
-    traits: ['Pintar', 'Kaya'],
+    traits: ['Pintar', 'Kaya', 'Jujur'],
     expectation: 'Cantik',
   },
   {

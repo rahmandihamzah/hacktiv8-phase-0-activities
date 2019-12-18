@@ -26,62 +26,57 @@
  */
 
 /*
-PREUDOCODE
+PSEUDOCODE
 
-FUNCTION "emailProvider" with "email" as parameter
+FUNCTION "emailProfider" with "email" as paarameter
 
-  STORE "startVal" without any value
-  STORE "endVal" without any value
-  STORE "provider" with empty string
+STORE "startVal" without any value
+STORE "endVal" without any value
+STORE "provResult" with empty string
 
-  STORE "i" with 0
-  FOR EACH "i" to length of "email"
-    IF index "i" value of "email" = "@" THEN
-      "startVal" = i
-    ELSE IF index "i" value of "email" = "." THEN
-      "endVal" = i
-      BREAK LOOP
-    END IF
-  END LOOP
+STORE "i" with 0
+FOR EACH "i" to length of "email"
+  IF index "i" value of "email" = "@" THEN
+    SET "startVal" with "i"
+  ELSE IF index "i" value of "email" = "." THEN
+    SET "endVal" with "i"
+    BREAK LOOP
+  END IF
+END LOOP
 
-  STORE "i" with 0
-  FOR EACH "i" to length of "email"
-    IF value of "i" > value of "startVal" && value of "i" < value of "endVal" THEN
-      "provider" with value of "provider" + index "i" value of "email"
-    END IF
-  END LOOP
+STORE "i" with 0
+FOR EACH "i" to length of "email"
+  IF "i" > value of "startVal" and "i" < value of "endVal" THEN
+    SET "provResult" with value of "provResult" + index "i" value of "email"
+  END IF
+END LOOP
 
-  RETURN "provider"
+RETURN "provResult"
 
 END FUNCTION
-
-DISPLAY "emailProvider" with 'yusuf@gmail.com' as value of parameter
-DISPLAY "emailProvider" with 'icha@hacktiv8.com' as value of parameter
-DISPLAY "emailProvider" with 'icha@yahoo.co.id' as value of parameter
 */
 
 function emailProvider(email) {
   let startVal;
   let endVal;
-  let provider = '';
+  let provResult = "";
 
   for (let i = 0; i < email.length; i++) {
-    if (email[i] === '@') {
+    if (email[i] === "@") {
       startVal = i;
-    } else if (email[i] === '.') {
+    } else if (email[i] === ".") {
       endVal = i;
       break;
     }
   }
 
-
   for (let i = 0; i < email.length; i++) {
     if (i > startVal && i < endVal) {
-      provider += email[i];
+      provResult += email[i];
     }
   }
 
-  return provider;
+  return provResult;
 }
 
 console.log(emailProvider('yusuf@gmail.com')) // Your email provider is gmail

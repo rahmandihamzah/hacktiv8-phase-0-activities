@@ -53,61 +53,36 @@ RULE:
 */
 
 function multiplyTheOdds(arrOperand1, arrOperand2) {
-  let newArray = [];
+  let newArr = [];
+  let itm1;
+  let itm2;
   let ganjil = 1;
 
-  if (arrOperand1.length > arrOperand2.length) {
-    let toRun = true;
-    let i = 0;
-    while (toRun) {
-    
-      if (i === arrOperand1.length) {
-        toRun = false;
-      } else if (i < arrOperand2.length) {
-          for (let j = 0; j < arrOperand2.length; j++) {
-            newArray.push(arrOperand1[i] * arrOperand2[j]);
-            i++
-          }
+  if (arrOperand1.length >= arrOperand2.length) {
+    for (let i = 0; i < arrOperand1.length; i++) {
+      if (i >= arrOperand2.length) {
+        newArr.push(arrOperand1[i] * 0);
       } else {
-        newArray.push(arrOperand1[i] * 0);
-        i++
+        newArr.push(arrOperand1[i] * arrOperand2[i])
       }
-
-        
     }
-
   } else {
-    let toRun = true;
-    let i = 0;
-    while (toRun) {
-      if (i === arrOperand2.length) {
-        toRun = false;
-      } else if (i < arrOperand1.length) {
-          for (let j = 0; j < arrOperand1.length; j++) {
-            newArray.push(arrOperand2[i] * arrOperand1[j]);
-            i++
-          }
+    for (let i = 0; i < arrOperand2.length; i++) {
+      if (i >= arrOperand1.length) {
+        newArr.push(arrOperand2[i] * 0);
       } else {
-        newArray.push(arrOperand2[i] * 0);
-        i++
+        newArr.push(arrOperand2[i] * arrOperand1[i]);
       }
-
     }
   }
 
-  // console.log(newArray.length)
-  if (newArray.length === 0) {
-    ganjil = 0;
-  } else {
-    for (let i = 0; i < newArray.length; i++) {
-      if (newArray[i] % 2 !== 0) {
-        ganjil *= newArray[i]
-      }
+  for (let i = 0; i < newArr.length; i++) {
+    if (newArr[i] % 2 !== 0) {
+      ganjil *= newArr[i];
     }
   }
 
   return ganjil;
-  // return newArray;
 }
 
 console.log(multiplyTheOdds([3, 5, 2], [7, 5, 4])); //525
