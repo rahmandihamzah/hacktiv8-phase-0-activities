@@ -17,14 +17,24 @@
  */
 
 function evaluate(str) {
+  let temp = '';
   let arrTemp = [];
   let operator;
   let result;
 
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] !== '+' || str[i] !== '-' || str[i] !== '*' || str[i] !== '/') {
-      arrTemp.push(str[i]);
+  for (let i = 0; i <= str.length; i++) {
+    if (str[i] !== '+' || str[i] !== '-' || str[i] !== '*' || str[i] !== '/' || i === str.length - 1) {
+      arrTemp.push(temp);
+      temp = '';
+    } else {
+      temp += str[i];
     }
+    
+    // else if (i === str.length - 1) {
+    //   temp += str[i];
+    //   arrTemp.push(temp);
+    //   temp = '';
+    // }
   }
 
   return arrTemp;
