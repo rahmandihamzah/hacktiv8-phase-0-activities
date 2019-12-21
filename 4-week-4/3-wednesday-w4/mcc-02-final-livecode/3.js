@@ -26,34 +26,6 @@ function bootPairCount(arr) {
   let arrContainer = [];
   let result;
 
-  // for (let i = 0; i < arr.length; i++) {
-  //   for (let j = 0; j < arr.length; j++) {
-  //     if (i !== j && i < j) {
-  //       if (arr[i] === arr[j]) {
-  //         if (arrContainer.length === 0) {
-  //           arrContainer.push({});
-  //           arrContainer[arrContainer.length - 1].warna = arr[i];
-  //           arrContainer[arrContainer.length - 1].jumlah = 2
-  //         } else {
-  //           for (let k = 0; k < arrContainer.length; k++) {
-  //             if (arrContainer[k].warna === arr[i]) {
-  //               arrContainer[k].jumlah++
-  //             }
-  //             if (k === arrContainer.length - 1) {
-  //               arrContainer[arrContainer.length - 1].warna = arr[i];
-  //               arrContainer[arrContainer.length - 1].jumlah = 2
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-
-  //   // if (arrContainer[arrContainer.length - 1].warna === undefined) {
-  //   //   arrContainer.pop();
-  //   // }
-  // }
-
   if (arrContainer.length === 0) {
     arrContainer.push({});
   } else {
