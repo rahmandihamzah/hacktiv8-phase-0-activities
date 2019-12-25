@@ -23,48 +23,58 @@ hasilnya adalah 3, karena ada dua pasang 12 dan satu pasang 14.
 
 
 function bootPairCount(arr) {
-  let arrContainer = [];
-  let result;
 
-  // for (let i = 0; i < arr.length; i++) {
-  //   for (let j = 0; j < arr.length; j++) {
-  //     if (i !== j && i < j) {
-  //       if (arr[i] === arr[j]) {
-  //         if (arrContainer.length === 0) {
-  //           arrContainer.push({});
-  //           arrContainer[arrContainer.length - 1].warna = arr[i];
-  //           arrContainer[arrContainer.length - 1].jumlah = 2
-  //         } else {
-  //           for (let k = 0; k < arrContainer.length; k++) {
-  //             if (arrContainer[k].warna === arr[i]) {
-  //               arrContainer[k].jumlah++
-  //             }
-  //             if (k === arrContainer.length - 1) {
-  //               arrContainer[arrContainer.length - 1].warna = arr[i];
-  //               arrContainer[arrContainer.length - 1].jumlah = 2
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
+  let tempArr = [];
+  let temp = 0;
+  let totalBoot = 0;
 
-  //   // if (arrContainer[arrContainer.length - 1].warna === undefined) {
-  //   //   arrContainer.pop();
-  //   // }
-  // }
-
-  if (arrContainer.length === 0) {
-    arrContainer.push({});
-  } else {
-    for (let i = 0; i < arr.length; i++) {
-      arrContainer[arrContainer.length - 1].warna = arr[i];
+  if (arr.length === 0) {
+    totalBoot = 'Tidak ada sepatu boot mohon cek kembali input anda';
+  }
+  for (let i = 0; i < arr.length; i++) {
+    // console.log(`ini I = ${i}`);
+    if (tempArr.length === 0) {
+      tempArr.push({});
+      tempArr[tempArr.length - 1].boot = arr[i];
+      tempArr[tempArr.length - 1].quantity = 1;
+    } else {
+      for (let j = 0; j <= tempArr.length; j++) {
+        // console.log(`ini J = ${j}`);
+        if (j === tempArr.length) {
+          tempArr.push({});
+          tempArr[tempArr.length - 1].boot = arr[i];
+          tempArr[tempArr.length - 1].quantity = 1;
+          // console.log('==============');
+          // console.log(tempArr);
+          // console.log('==============');
+          break;
+        } else if (tempArr[j].boot === arr[i]) {
+          tempArr[j].quantity++;
+          break;
+        }
+      }
     }
+    // console.log(tempArr);
   }
 
+  // console.log(tempArr);
 
-  return arrContainer;
+  for (let i = 0; i < tempArr.length; i++) {
+    temp = Math.floor(tempArr[i].quantity / 2);
+    // console.log(`${tempArr[i].quantity} / 2 = ${temp}`);
+    if (temp >= 1) {
+      totalBoot += temp / 1
+    }
+    temp = 0;
+  }
+
+  if (totalBoot === 0) {
+    totalBoot = 'Tidak ada pasangan sepatu boot ditemukan';
+  }
+
+  return totalBoot;
 }
+
 //TEST CASES
 console.log(bootPairCount([10, 20, 20, 10, 10, 30, 50, 10, 20])) // 3
 console.log(bootPairCount([15, 23, 23, 30, 30, 10, 15, 10])) // 4
