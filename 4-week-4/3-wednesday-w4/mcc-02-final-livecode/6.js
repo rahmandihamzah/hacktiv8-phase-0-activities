@@ -114,14 +114,45 @@ PROSES:
   }
 */
 function trackStep(rooms, moves) {
-  //your code here
+  let coordinate = -1;
+  let result = { room: '', listPrevRooms: [] };
+
+  if (rooms.length === 0 & moves.length === 0) {
+    result = 'Invalid rooms and moves';
+  } else if (moves.length === 0) {
+    result = 'No steps';
+  } else if (rooms.length === 0) {
+    result = 'There is no rooms can explore';
+  } else {
+    result
+    for (let i = 0; i < moves.length; i++) {
+      if (moves[i] === 'next') {
+        coordinate++;
+      } else if (moves[i] === 'back') {
+        coordinate--;
+      }
+    }
+    // console.log(coordinate);
+
+    if (coordinate > rooms.length - 1) {
+      result.room = rooms[rooms.length - 1];
+      result.listPrevRooms.push(rooms[rooms.length - 2]);
+    } else if (coordinate >= 0 && coordinate <= rooms.length - 1) {
+      result.room = rooms[coordinate];
+      for (let i = 0; i < coordinate; i++) {
+        result.listPrevRooms.push(rooms[i]);
+      }
+    }
+  }
+
+  return result;
 }
 /* TEST CASE / DRIVER CODE */
-console.log(trackStep([ 'Foxes Room', 'Wolves Room','Tigers Rooms', 'Elephants Rooms' ], [ 'next', 'next', 'next', 'back' ]));
+console.log(trackStep(['Foxes Room', 'Wolves Room', 'Tigers Rooms', 'Elephants Rooms'], ['next', 'next', 'next', 'back']));
 //  { room: 'Wolves Room', listPrevRooms: [ 'Foxes Room' ] }
-console.log(trackStep([ 'A Room', 'B Room' ], [ 'next', 'next', 'next', 'next' ]));
+console.log(trackStep(['A Room', 'B Room'], ['next', 'next', 'next', 'next']));
 // { room: 'B Room', listPrevRooms: [ 'A Room '] }
-console.log(trackStep([ 'A Room', 'B Room' ], [ 'next', 'back', 'back' ]));
+console.log(trackStep(['A Room', 'B Room'], ['next', 'back', 'back']));
 // { room: '', listPrevRooms: [] }
 console.log(trackStep([], [])); // Invalid rooms and moves
 console.log(trackStep(['A rooms'], [])); //No steps!
